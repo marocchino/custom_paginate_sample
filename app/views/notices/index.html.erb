@@ -18,7 +18,9 @@
   </tr>
 <% end %>
 </table>
-<%=will_paginate @notices %>
+<% require "#{RAILS_ROOT}/app/renderers/notices_link_renderer" %>
+<%=will_paginate @notices, :renderer => NoticesLinkRenderer %>
+<%#=will_paginate @notices %>
 <br />
 
 <%= link_to 'New notice', new_notice_path %>
