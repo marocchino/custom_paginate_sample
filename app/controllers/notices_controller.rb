@@ -2,7 +2,10 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.xml
   def index
-    @notices = Notice.all
+    # generate sample data
+    #[*1..1000].reverse.each { |e| Notice.new({:name => "name#{e}", :title => "test#{e}"}).save }
+    
+    @notices = Notice.paginate :page => params[:page], :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb
