@@ -18,7 +18,13 @@
   </tr>
 <% end %>
 </table>
-<%=will_paginate @notices, :renderer => linker %>
+<%=will_paginate @notices, 
+  :renderer => linker, 
+  :perv_label => "Back", 
+  :first_label => "Newest", 
+  :last_label => "Oldest", 
+  :total_label => "total ## pages"
+%>
 <br />
 
 <%= link_to 'New notice', new_notice_path %>
