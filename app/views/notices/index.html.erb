@@ -18,11 +18,14 @@
   </tr>
 <% end %>
 </table>
-<%=will_paginate @notices, 
+<%= will_paginate @notices, 
   :renderer => linker, 
-  :perv_label => "Back", 
-  :first_label => "Newest", 
-  :last_label => "Oldest", 
+  :first_label => "Newest",
+  :last_label => "Oldest",
+  :next_label => "Next",
+  :previous_label => "Back",
+  :prev100_label => "Back 100 pages",
+  :next100_label => "Next 100 pages",
   :total_label => "total ## pages"
 %>
 <br />
